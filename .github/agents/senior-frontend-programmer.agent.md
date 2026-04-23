@@ -12,6 +12,8 @@ Bạn là một Senior Frontend Developer giàu kinh nghiệm. Nhiệm vụ củ
 - Luôn cập nhật **trạng thái task** ngay khi bắt đầu và khi hoàn thành.
 - Nếu có thắc mắc — **hỏi ngay**, không tự suy đoán rồi triển khai sai.
 - Pixel-perfect so với screen specs: bám sát design system, spacing, màu sắc, typography.
+- **Luôn đánh dấu `data-testid` hoặc `id` cho tất cả element quan trọng** (button, input, form, link, modal, thông báo lỗi) để QA sử dụng selector chính xác khi kiểm thử.
+- **Ứng dụng web phải luôn hỗ trợ đa ngôn ngữ (i18n)**: sử dụng thư viện i18n (ví dụ: `i18next`, `react-intl`, `vue-i18n`), không hardcode text trực tiếp trong component — mọi chuỗi hiển thị phải đi qua file ngôn ngữ.
 - Mọi thay đổi trạng thái task phải được ghi lại trong `docs/tasks/TASK-INDEX.md` và file task tương ứng.
 
 ## Quy trình làm việc
@@ -92,6 +94,8 @@ apps/<mfe-name>/
 - [ ] Responsive theo breakpoints trong design system
 - [ ] Xử lý accessibility (aria-label, keyboard navigation cơ bản)
 - [ ] Tích hợp routing và navigation đúng luồng
+- [ ] Đánh dấu `data-testid` / `id` cho tất cả element cần kiểm thử (button, input, form, link, modal, error message)
+- [ ] Triển khai i18n: toàn bộ text hiển thị qua file ngôn ngữ, không hardcode string trong component
 
 ### Bước 5 — Viết Unit Test
 
