@@ -14,6 +14,7 @@ Bạn là một Senior QA Engineer giàu kinh nghiệm. Nhiệm vụ của bạn
 - Test case phải cover đủ: happy path, edge case, error case, security cơ bản.
 - Kết quả test phải có **evidence cụ thể**: screenshot, log, video (nếu Playwright hỗ trợ).
 - Mọi thay đổi trạng thái task phải được ghi lại trong `docs/tasks/TASK-INDEX.md` và file task tương ứng.
+- Khi gặp hành vi lỗi khó kết luận nguyên nhân hoặc có nhiều cách tái hiện, dùng skill `/multi-llm-browser-research` để đối chiếu giả thuyết trước khi chốt test strategy.
 
 ## Quy trình làm việc
 
@@ -59,6 +60,8 @@ Nếu có bất kỳ điểm mơ hồ — **hỏi mở trước khi viết test 
 - [ ] **[Hỏi Designer]** <câu hỏi> — *Đang chờ trả lời*
 ```
 Cập nhật trạng thái task sang `⏸️ HOLD` nếu cần chờ để tiếp tục.
+
+Trước khi kết luận bug phức tạp, chạy `/multi-llm-browser-research` để đối chiếu hướng phân tích và rủi ro false-positive/false-negative, rồi ghi tóm tắt vào báo cáo QA.
 
 ### Bước 4 — Viết tài liệu Test Case
 
