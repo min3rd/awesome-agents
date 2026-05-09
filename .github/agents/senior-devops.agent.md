@@ -14,7 +14,8 @@ Bạn là một Senior DevOps Engineer giàu kinh nghiệm. Nhiệm vụ của b
 - Ưu tiên **IaC (Infrastructure as Code)**: mọi hạ tầng phải được định nghĩa bằng code (Terraform, Helm, Docker Compose...), không cấu hình thủ công.
 - **Bảo mật là ưu tiên hàng đầu**: không hardcode credentials, không expose port không cần thiết, không dùng image không rõ nguồn gốc.
 - Mọi thay đổi trạng thái task phải được ghi lại trong `docs/tasks/TASK-INDEX.md` và file task tương ứng.
-- Với sự cố triển khai/phân tích pipeline phức tạp hoặc có nhiều hướng xử lý, dùng skill `/multi-llm-browser-research` để đối chiếu trước khi chốt thay đổi hạ tầng.
+- Với sự cố triển khai/phân tích pipeline phức tạp hoặc có nhiều hướng xử lý, dùng skill `/ai-research` để đối chiếu trước khi chốt thay đổi hạ tầng.
+- Khi cần mô tả nhanh màn hình/luồng vận hành để bàn giao release hoặc runbook, có thể dùng skill `/ui-mockup` để tạo hình minh họa tham chiếu.
 
 ## Quy trình làm việc
 
@@ -60,7 +61,7 @@ Nếu có bất kỳ điểm mơ hồ — **hỏi mở trước khi triển khai
 ```
 Cập nhật trạng thái task sang `⏸️ HOLD` nếu cần chờ để tiếp tục.
 
-Trước khi quyết định fix cho lỗi CI/CD hoặc production-like issue khó, chạy `/multi-llm-browser-research` để so sánh phương án theo mức rủi ro vận hành, rồi ghi lại kết luận trong file task.
+Trước khi quyết định fix cho lỗi CI/CD hoặc production-like issue khó, chạy `/ai-research` để so sánh phương án theo mức rủi ro vận hành, rồi ghi lại kết luận trong file task.
 
 ### Bước 4 — Triển khai hạ tầng và ứng dụng
 

@@ -1,14 +1,14 @@
 ---
-name: multi-llm-browser-research
-description: 'Dùng khi cần tra cứu và giải quyết vấn đề kỹ thuật bằng nhiều LLM qua browser (ChatGPT, Gemini, Grok), đối chiếu kết quả, giảm phụ thuộc vào một nguồn duy nhất và tạo phương án hành động đáng tin cậy.'
-argument-hint: 'Mô tả vấn đề cần tra cứu đa LLM và kết quả mong muốn'
+name: ai-research
+description: 'Tra cứu và đối chiếu phương án kỹ thuật qua nhiều nền tảng AI trên browser để tăng độ tin cậy trước khi quyết định.'
+argument-hint: 'Mô tả vấn đề cần tra cứu AI và kết quả mong muốn'
 user-invocable: true
 disable-model-invocation: false
 ---
 
-# Multi-LLM Browser Research
+# AI Research
 
-Skill này giúp agent dùng browser của người dùng để tra cứu cùng lúc trên ChatGPT, Gemini, và Grok; sau đó tổng hợp, đối chiếu, và đưa ra kế hoạch xử lý có kiểm chứng.
+Skill này giúp agent dùng browser của người dùng để tra cứu trên nhiều nền tảng AI; sau đó tổng hợp, đối chiếu, và đưa ra kế hoạch xử lý có kiểm chứng.
 
 ## Khi nào nên dùng
 
@@ -25,7 +25,7 @@ Skill này giúp agent dùng browser của người dùng để tra cứu cùng 
 ## Kết quả đầu ra bắt buộc
 
 - Tóm tắt vấn đề và phạm vi.
-- Bảng đối chiếu ý kiến từ ChatGPT, Gemini, Grok.
+- Bảng đối chiếu ý kiến từ các nền tảng AI đã dùng.
 - Kết luận hợp nhất (consensus hoặc phân nhánh theo điều kiện).
 - Kế hoạch thực thi từng bước trong repo.
 - Checklist xác nhận hoàn thành.
@@ -37,11 +37,11 @@ Skill này giúp agent dùng browser của người dùng để tra cứu cùng 
 - Ẩn danh mọi dữ liệu nhạy cảm trước khi gửi.
 
 2. Tạo bộ prompt dùng chung
-- Tạo 1 prompt chuẩn cho cả 3 nền tảng để kết quả dễ so sánh.
+- Tạo 1 prompt chuẩn cho các nền tảng để kết quả dễ so sánh.
 - Nếu cần, thêm 1 prompt phụ cho từng nền tảng để khai thác điểm mạnh riêng.
 
-3. Tra cứu lần 1 trên 3 nền tảng
-- Mở lần lượt ChatGPT, Gemini, Grok trên browser.
+3. Tra cứu lần 1 trên các nền tảng
+- Mở lần lượt các nền tảng AI trên browser (ví dụ: ChatGPT, Gemini, Grok).
 - Gửi cùng prompt chuẩn và thu thập kết quả thô.
 
 4. Đối chiếu và phân loại
@@ -75,7 +75,7 @@ Skill này giúp agent dùng browser của người dùng để tra cứu cùng 
 ## Checklist hoàn thành
 
 - [ ] Đã chuẩn hóa prompt gốc và ẩn danh dữ liệu nhạy cảm.
-- [ ] Đã thu thập phản hồi từ ChatGPT, Gemini, Grok.
+- [ ] Đã thu thập phản hồi từ các nền tảng AI đã chọn.
 - [ ] Đã lập bảng đối chiếu điểm giống/khác.
 - [ ] Đã xử lý mâu thuẫn bằng vòng hỏi bổ sung hoặc kiểm chứng thực nghiệm.
 - [ ] Đã thực thi ít nhất một hướng trong repo và có bằng chứng test/build.
@@ -91,6 +91,6 @@ Prompt phản biện khi mâu thuẫn:
 
 ## Gợi ý sử dụng trong chat
 
-- /multi-llm-browser-research "So sánh 3 LLM để xử lý lỗi build TypeScript sau khi nâng cấp dependency"
-- /multi-llm-browser-research "Tra cứu đa LLM để chọn chiến lược tối ưu query MongoDB bị chậm"
-- /multi-llm-browser-research "Đối chiếu ChatGPT/Gemini/Grok cho bug race condition và đề xuất test xác minh"
+- /ai-research "So sánh phương án xử lý lỗi build TypeScript sau khi nâng cấp dependency"
+- /ai-research "Tra cứu đa nguồn AI để chọn chiến lược tối ưu query MongoDB bị chậm"
+- /ai-research "Đối chiếu kết luận cho bug race condition và đề xuất test xác minh"
