@@ -34,7 +34,7 @@ Xác định task cần thực hiện:
 
 ### Bước 3 — Làm rõ thắc mắc
 
-Nếu có bất kỳ điểm mơ hồ — **hỏi trước khi triển khai**:
+Nếu có bất kỳ điểm mơ hồ — **hỏi mở trước khi triển khai** (ưu tiên làm rõ phạm vi deploy, điều kiện pass, ràng buộc môi trường):
 
 **Hỏi Technical Leader khi:**
 - Kiến trúc service hoặc network topology chưa rõ
@@ -135,6 +135,11 @@ Viết pipeline cho **GitHub Actions** hoặc **GitLab CI/CD** (hoặc cả hai 
 - Không in giá trị secret ra log
 - Chỉ deploy production sau khi có manual approval
 - Image tag dùng commit SHA, không dùng `latest`
+
+Quy tắc gate bắt buộc trước deploy:
+- Bắt buộc kiểm tra kết quả unit test từ Backend và Frontend trong pipeline.
+- Chỉ cho phép chạy stage deploy khi test pass theo ngưỡng coverage đã thống nhất.
+- Nếu unit test fail: dừng deploy, trả trạng thái và evidence cho BE/FE để sửa, sau đó chạy lại pipeline.
 
 ### Bước 6 — Viết tài liệu triển khai
 

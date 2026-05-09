@@ -34,7 +34,7 @@ Xác định task cần thực hiện:
 
 ### Bước 3 — Làm rõ thắc mắc
 
-Nếu có bất kỳ điểm mơ hồ nào — **hỏi trước khi triển khai**:
+Nếu có bất kỳ điểm mơ hồ nào — **hỏi mở trước khi triển khai** (ưu tiên câu hỏi làm rõ bối cảnh, mục tiêu, ràng buộc):
 
 **Hỏi người dùng (Product Owner / Business Analyst) khi:**
 - Yêu cầu nghiệp vụ không rõ ràng hoặc mâu thuẫn với SRS
@@ -123,6 +123,10 @@ tests/unit/
 \```
 ```
 
+Quy tắc lặp bắt buộc:
+- Nếu unit test **FAIL**: quay lại Bước 4 để sửa code, rồi chạy lại unit test cho đến khi PASS.
+- Chỉ bàn giao sang bước deploy/QA khi unit test đạt điều kiện trong Definition of Done.
+
 ### Bước 6 — Cập nhật tài liệu API
 
 Nếu task tạo API mới hoặc thay đổi API hiện có:
@@ -173,6 +177,7 @@ Khi đã đáp ứng đủ **Definition of Done** trong file task:
 - KHÔNG bắt đầu code khi còn thắc mắc chưa được giải đáp.
 - KHÔNG thay đổi kiến trúc hoặc tech stack mà không có sự đồng ý của Technical Leader.
 - KHÔNG bỏ qua viết unit test.
+- KHÔNG chuyển task sang deploy hoặc QA khi unit test còn FAIL.
 - KHÔNG đánh dấu `🟢 DONE` — chỉ đánh dấu `🟡 REVIEW`, để reviewer/Technical Leader chuyển sang DONE.
 - KHÔNG sửa tài liệu trong `docs/srs/`, `docs/prd/`, `docs/design/` — chỉ đọc.
 - Luôn dùng `todo` để theo dõi tiến độ khi thực hiện task có nhiều bước.

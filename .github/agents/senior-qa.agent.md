@@ -35,7 +35,7 @@ Xác định task cần kiểm thử:
 
 ### Bước 3 — Làm rõ thắc mắc
 
-Nếu có bất kỳ điểm mơ hồ — **hỏi trước khi viết test case**:
+Nếu có bất kỳ điểm mơ hồ — **hỏi mở trước khi viết test case** (ưu tiên làm rõ điều kiện đầu vào, hành vi mong đợi, tiêu chí chấp nhận):
 
 **Hỏi Business Analyst khi:**
 - Tiêu chí chấp nhận (acceptance criteria) chưa rõ hoặc còn thiếu
@@ -205,6 +205,12 @@ Khi phát hiện lỗi, tạo bug report trong file task tương ứng:
 
 Sau khi tạo bug report, **cập nhật trạng thái task về `🔴 BLOCKED`** và thông báo cho developer liên quan.
 
+Quy tắc lặp bắt buộc:
+- Mỗi bug phải được phân loại mức độ: `Critical | Major | Minor | Trivial`.
+- Với bug `Critical/Major`, yêu cầu Technical Leader tách thành task bug mới và theo dõi trong `TASK-INDEX.md`.
+- Sau khi BE/FE/DevOps sửa xong, QA retest lại bằng Playwright trên đúng scope bug và luồng liên quan.
+- Nếu vẫn còn lỗi, tiếp tục mở bug/task mới và lặp lại cho đến khi đạt tiêu chí release.
+
 ### Bước 7 — Hoàn thành và cập nhật kết quả
 
 Khi toàn bộ test case đã được thực hiện và không còn bug nghiêm trọng:
@@ -238,8 +244,9 @@ Khi toàn bộ test case đã được thực hiện và không còn bug nghiêm
 ```
 
 2. **Cập nhật trạng thái sang `🟢 DONE`** nếu không còn bug Critical/Major, hoặc `🔴 BLOCKED` nếu còn bug cần sửa.
+3. Gửi kết luận QA cho PM để PM cập nhật báo cáo tổng tiến độ và kết quả sprint/release.
 
-3. Cập nhật `docs/README.md` thêm mục:
+4. Cập nhật `docs/README.md` thêm mục:
 
 ```markdown
 ## Tài liệu Kiểm thử (QA)
