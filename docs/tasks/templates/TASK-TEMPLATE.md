@@ -2,10 +2,9 @@
 
 ## Thông tin chung
 
-- Task ID: TASK-SPRINT-<NN>-<CLUSTER>-<NNN>
+- Task ID: TASK-SPRINT-<NN>-<NNN>
 - Tiêu đề: <tieu-de-ngan-gon>
 - Sprint: <NN>
-- Cluster: <cluster-kebab-case>
 - Trạng thái: ⬜ TODO
 - Loại: Frontend | Backend | Database | DevOps | Testing | QA | Security
 - Ưu tiên: Cao | Trung bình | Thấp
@@ -185,16 +184,15 @@ Errors: 400, 401, 403, 404, 409, 500
 - Ngày hoàn thành:
 - Branch/Commit:
 - Files đã tạo/sửa:
-  - <path-1> - <mo-ta>
-  - <path-2> - <mo-ta>
+  - docs/tasks/sprints/SPRINT-<NN>/TASK-SPRINT-<NN>-<NNN>-<slug>.md - <mo-ta>
+  - <path-khac-neu-co> - <mo-ta>
 - Ghi chú review:
   - <ghi-chu-1>
 
 ## Definition of Done
 
-- [ ] Đã cập nhật trạng thái index toàn cục
+- [ ] Đã cập nhật trạng thái index toàn cục theo sprint
 - [ ] Đã cập nhật trạng thái index sprint
-- [ ] Đã cập nhật index cluster (nếu có)
 - [ ] Đã cập nhật trạng thái theo đúng agent chính/phối hợp
 - [ ] Unit test đạt yêu cầu
 - [ ] Tài liệu API được cập nhật (nếu có)
