@@ -1,6 +1,6 @@
 ---
 name: ai-research
-description: 'Tra cứu và đối chiếu phương án kỹ thuật qua nhiều nền tảng AI trên browser để tăng độ tin cậy trước khi quyết định.'
+description: 'Tra cứu và đối chiếu phương án kỹ thuật qua Microsoft Copilot và Gemini trên browser để tăng độ tin cậy trước khi quyết định. Yêu cầu người dùng đăng nhập trước khi chạy.'
 argument-hint: 'Mô tả vấn đề cần tra cứu AI và kết quả mong muốn'
 user-invocable: true
 disable-model-invocation: false
@@ -49,15 +49,16 @@ Ba agent trên phải ưu tiên gọi skill này khi cần tham khảo thêm th�
 - Nếu cần, thêm 1 prompt phụ cho từng nền tảng để khai thác điểm mạnh riêng.
 
 3. Tra cứu lần 1 trên các nền tảng
-- Mở lần lượt các nền tảng AI trên browser (ví dụ: ChatGPT, Gemini, Grok).
-- Gửi cùng prompt chuẩn và thu thập kết quả thô.
+- Yêu cầu người dùng đăng nhập trước trên Microsoft Copilot và Gemini.
+- Mở Microsoft Copilot và Gemini trên browser.
+- Gửi cùng prompt chuẩn và thu thập kết quả thô từ cả 2 nền tảng.
 
 4. Đối chiếu và phân loại
 - Nhóm câu trả lời thành: trùng khớp, bổ sung, mâu thuẫn.
 - Trích ra giả định quan trọng, bước thực thi, rủi ro được nêu.
 
 5. Nhánh quyết định khi có mâu thuẫn
-- Nếu 3 nguồn đồng thuận cao: chuyển sang bước 6.
+- Nếu 2 nguồn đồng thuận cao: chuyển sang bước 6.
 - Nếu có mâu thuẫn lớn: tạo prompt phản biện và hỏi vòng 2, tập trung vào điểm mâu thuẫn.
 - Nếu vẫn mâu thuẫn: ưu tiên phương án có khả năng kiểm chứng nhanh trong repo bằng test/build nhỏ nhất.
 
@@ -75,7 +76,7 @@ Ba agent trên phải ưu tiên gọi skill này khi cần tham khảo thêm th�
 
 ## Tiêu chí chất lượng
 
-- Có ít nhất 2 nguồn AI độc lập đồng thuận cho các quyết định quan trọng.
+- Có phản hồi từ cả Microsoft Copilot và Gemini cho các quyết định quan trọng.
 - Mọi khuyến nghị quan trọng đều chuyển thành bước kiểm chứng được trong repo.
 - Không để lộ dữ liệu nhạy cảm trong prompt hoặc ảnh chụp.
 - Kết luận cuối cùng phải hành động được, không chỉ dừng ở mô tả lý thuyết.
@@ -83,7 +84,8 @@ Ba agent trên phải ưu tiên gọi skill này khi cần tham khảo thêm th�
 ## Checklist hoàn thành
 
 - [ ] Đã chuẩn hóa prompt gốc và ẩn danh dữ liệu nhạy cảm.
-- [ ] Đã thu thập phản hồi từ các nền tảng AI đã chọn.
+- [ ] Đã xác nhận người dùng đăng nhập thành công Microsoft Copilot và Gemini.
+- [ ] Đã thu thập phản hồi từ cả Microsoft Copilot và Gemini.
 - [ ] Đã lập bảng đối chiếu điểm giống/khác.
 - [ ] Đã xử lý mâu thuẫn bằng vòng hỏi bổ sung hoặc kiểm chứng thực nghiệm.
 - [ ] Đã thực thi ít nhất một hướng trong repo và có bằng chứng test/build.
