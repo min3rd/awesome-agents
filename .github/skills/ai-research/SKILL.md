@@ -10,6 +10,14 @@ disable-model-invocation: false
 
 Skill này giúp agent dùng browser của người dùng để tra cứu trên nhiều nền tảng AI; sau đó tổng hợp, đối chiếu, và đưa ra kế hoạch xử lý có kiểm chứng.
 
+## Agent áp dụng bắt buộc
+
+- Project Manager
+- Product Owner
+- Business Analyst
+
+Ba agent trên phải ưu tiên gọi skill này khi cần tham khảo thêm thông tin từ các AI khác trước khi chốt quyết định.
+
 ## Khi nào nên dùng
 
 - Cần giải quyết vấn đề kỹ thuật phức tạp, nhiều giả thuyết.
